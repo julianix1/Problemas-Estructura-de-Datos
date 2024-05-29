@@ -24,6 +24,7 @@
     <ProjectGuid>{e3f84921-2a32-4620-abb1-184b9098c61c}</ProjectGuid>
     <RootNamespace>Ejercicio1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Ejercicio_01</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,7 +128,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ejercicio_1.cpp" />
+    <ClCompile Include="Ejercicio_01.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="datos.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="enunciado.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hora.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
