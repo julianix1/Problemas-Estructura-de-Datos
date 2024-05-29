@@ -1,0 +1,13 @@
+12 I
+A 3 A 2 A 1 M D C M D C M D M
+20 I
+A 1 A 2 A 3 M D C M D M D A 4 C A 2 A 7 M C M D D M
+6 I
+M C A 2 M D D
+14 I
+A 7 M A 4 M A 6 M A 3 M D M D M D M
+8 C
+A b A b A b M D M D M
+17 C
+A e A b A e A b A a A a M D M D M D M D M D M
+0
