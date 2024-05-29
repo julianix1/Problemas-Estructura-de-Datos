@@ -1,51 +1,58 @@
 // Nombre del alumno Julian Regura Peñalosa
 // Usuario del Juez A60
 
+#include <iostream> 
+#include <fstream> 
+#include <string>
+#include "queue_eda.h"
 
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <vector>
-
-using namespace std;
-
-// Resuelve un caso de prueba, leyendo de la entrada la
-// configuración, y escribiendo la respuesta
 bool resuelveCaso() {
-    int num;
+    std::string str;
+    getline(std::cin, str);
+    if (str == ".") return false;
 
-    cin >> num;
-
-    if (num == 0) return false;
-
-    vector<int> datos(num);
-
-    for (int i = 0; i< num;i++)
-    {
-        cin >> datos[i];
+    // lee los datos de entrada en la cola
+    queue_eda<char> cola;
+    for (int i = 0; i < str.length(); ++i) {
+        cola.push(str[i]);
     }
 
-    TipoSolucion sol = resolver(datos);
+    // Rota los datos de la cola
+    for (int i = 0; i < cola.size(); ++i) {
+        cola.push(cola.front());
+        cola.pop();
+    }
 
-    cout << sol << endl;
+    // Duplica los elementos de la cola
+    int numElem = (int)cola.size();
+    for (int i = 0; i < numElem; ++i) {
+        cola.push(cola.front());
+        cola.push(cola.front());
+        cola.pop();
+    }
 
+    // Muestra los elementos de la cola y la deshace
+    numElem = (int)cola.size();
+    for (int i = 0; i < numElem; i += 2) {
+        std::cout << cola.front();
+        cola.pop(); cola.pop();
+    }
+
+    if (!cola.empty()) std::cout << "ERROR\n";
+    std::cout << '\n';
     return true;
-
 }
 
+
 int main() {
-    // Para la entrada por fichero.
-    // Comentar para acepta el reto
+
 #ifndef DOMJUDGE
     std::ifstream in("datos.txt");
     auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
-#endif 
-
+#endif
 
     while (resuelveCaso());
 
-
-    // Para restablecer entrada. Comentar para acepta el reto
 #ifndef DOMJUDGE // para dejar todo como estaba al principio
     std::cin.rdbuf(cinbuf);
     system("PAUSE");
@@ -53,3 +60,4 @@ int main() {
 
     return 0;
 }
+

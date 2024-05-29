@@ -1,0 +1,6 @@
+Hola Mundo!!
+Esta linea termina en un punto.
+Los casos terminan con un solo .
+
+La linea anterior estaba vacia
+.
