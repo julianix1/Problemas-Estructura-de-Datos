@@ -40,7 +40,6 @@ int main() {
     auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
 #endif 
 
-
     while (resuelveCaso())
         ;
 
